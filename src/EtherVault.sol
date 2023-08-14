@@ -23,7 +23,7 @@ contract EtherVault is Ownable {
     error EtherStore__WithdrawalFailed();
 
     // State variables //
-    bool reEntrancyMutex = false;
+    bool public reEntrancyMutex = false; // it public for testing purpose
     uint256 public withdrawalLimit = 1 ether;
     mapping(address => uint256) public s_lastWithdrawTime;
     mapping(address => uint256) public s_balances;
@@ -31,7 +31,7 @@ contract EtherVault is Ownable {
 
     //  Events   //
     event Deposit(address indexed depositor, uint256 amount);
-    event withdrawal(address indexed recipient, uint256 amount);
+    event Withdrawal(address indexed recipient, uint256 amount);
 
     // Functions //
 
@@ -83,7 +83,7 @@ contract EtherVault is Ownable {
 
         reEntrancyMutex = false;
 
-        emit withdrawal(msg.sender, _weiToWithdraw);
+        emit Withdrawal(msg.sender, _weiToWithdraw);
     }
 
     /**
