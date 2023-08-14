@@ -33,7 +33,7 @@ forge build
 Deploy:
 
 ```
-forge script scripts/EtherVault.s.sol
+forge script scripts/DeployEtherVault.s.sol
 ```
 
 ## Testing
@@ -90,4 +90,4 @@ Head over to [faucets.chain.link](https://faucets.chain.link/) and get some test
 forge script script/DeployFundMe.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
-#### happy coding 😁
+#### happy coding 👨‍💻
