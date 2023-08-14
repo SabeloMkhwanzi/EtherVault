@@ -16,6 +16,8 @@
 
 6. Contract has function to view ether balances on address and last time withdrawals made.
 
+7. Contract also uses Chainlink data-feeds to Eth price in USD.
+
 ## Quickstart
 
 ```
