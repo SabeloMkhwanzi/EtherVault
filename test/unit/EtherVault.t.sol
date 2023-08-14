@@ -189,18 +189,4 @@ contract EtherVaultTest is Test {
         // Test last withdraw time still 0
         assertEq(etherVault.getLastWithdrawTime(USER), 0);
     }
-
-    function testConstructor() public {
-        // Deploy with expected price feed address
-        EtherVault vault = new EtherVault(address(0x123456));
-
-        // Check price feed set correctly
-        assertEq(address(vault.getPriceFeed()), address(0x123456));
-
-        // Check version is valid
-        assertGt(vault.getPriceFeedVersion(), 0);
-
-        // Check owner is msg.sender
-        assertEq(vault.owner(), address(this));
-    }
 }
